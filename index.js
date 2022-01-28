@@ -67,6 +67,11 @@ function createImage(imgSrc) {
   image.src = imgSrc;
   return image;
 }
+function init(){
+    
+}
+
+
 const player = new Player();
 const platformimage = createImage(
   "https://media.istockphoto.com/vectors/brick-wall-red-seamless-texture-pattern-background-vector-id1249343673?k=20&m=1249343673&s=612x612&w=0&h=tKMPMkgbxJxyQuYlRdD3H4I_Ph1K1enMGTEqov2LbkY="
@@ -158,7 +163,9 @@ function animate() {
     console.log("win");
   }
   //lossing point
-  if
+  if (player.position.y > canvas.height) {
+    init();
+  }
 }
 animate();
 
