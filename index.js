@@ -3,7 +3,7 @@ const canvas = document.querySelector("canvas");
 const c = canvas.getContext("2d");
 
 let spriteRunLeft = createImage(
-  "https://user-images.githubusercontent.com/91772445/151612296-df42e745-4830-4300-b7af-d4dd531f16d3.png"
+  "https://user-images.githubusercontent.com/91772445/151645856-0d940822-3e41-4517-86cf-ed43a3aba95d.png"
 );
 canvas.width = 1024;
 canvas.height = 576;
@@ -139,12 +139,7 @@ function init() {
       image: platformimage,
     }),
     new Platform({
-      x: platformimage.width * 2 + 150,
-      y: 470,
-      image: platformimage,
-    }),
-    new Platform({
-      x: platformimage.width * 3 + 250,
+      x: platformimage.width * 2 + 250,
       y: 470,
       image: platformimage,
     }),
@@ -158,10 +153,20 @@ function init() {
       y: 470,
       image: platformimage,
     }),
+    new Platform({
+      x: platformimage.width * 5 + 1050,
+      y: 470,
+      image: platformimage,
+    }),
   ];
   genericObject = [
     new GenericObject({
       x: -1,
+      y: 325,
+      image: backgroundHills,
+    }),
+    new GenericObject({
+      x: 4 * 400,
       y: 325,
       image: backgroundHills,
     }),
@@ -218,8 +223,9 @@ function animate() {
     }
   });
   //winning point
-  if (scrollOffset > platformimage.width * 4 + 350) {
+  if (scrollOffset > platformimage.width * 5 + 850) {
     console.log("win");
+    //alert("Congratulations ! for completing game");
   }
   //lossing point
   if (player.position.y > canvas.height) {
